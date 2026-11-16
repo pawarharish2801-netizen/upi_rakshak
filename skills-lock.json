@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "skills": {
+    "accessible-animation": {
+      "source": "iart-ai/web-animation-skills",
+      "sourceType": "github",
+      "skillPath": "skills/accessible-animation/SKILL.md",
+      "computedHash": "95904f741088363b8073d5399600107becd24f23cf81920d4b00a368a7d78d99"
+    },
+    "agent-security-audit": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/ai-security-skills/skills/agent-security-audit/SKILL.md",
+      "computedHash": "c465ace3d25f583d17b6f25eec496d50603d88c1be1313bfc6bd8ad125ad7cd9"
+    },
+    "agentic-ai-risk-assess": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/ai-security-skills/skills/agentic-ai-risk-assess/SKILL.md",
+      "computedHash": "4ee5a6e00130d949804efcdf20fda216f99d2ede6896a336ef487df22ff4ddbe"
+    },
+    "ai-security-verification": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/ai-security-skills/skills/ai-security-verification/SKILL.md",
+      "computedHash": "67d528ef178102fcf242c06e3a4d1dd05c203e79c382bea818553bd6f37d835a"
+    },
+    "api-security-review": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/code-security-skills/skills/api-security-review/SKILL.md",
+      "computedHash": "fac03deef4e335dcae09bd9b7687489881261e8abdc6cbcb6e160cb81e571fda"
+    },
+    "apply-design-system": {
+      "source": "edenspiekermann/Skills",
+      "sourceType": "github",
+      "skillPath": "skills/apply-design-system/SKILL.md",
+      "computedHash": "c5c4a021874618349dde4e0a2b28e411c6f4fa0df6f7914ef8bacaaa4b23d78e"
+    },
+    "better-colors": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": "skills/better-colors/SKILL.md",
+      "computedHash": "12eba062872b119373dca22e1f93a7087d09c0a41a5ae4991d913dc44dfe0bbd"
+    },
+    "code-review-security": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/code-security-skills/skills/code-review-security/SKILL.md",
+      "computedHash": "1d4ca3f0c384b938faaef2493cf0da2aaa011f9b522905373d5294d11bf41db8"
+    },
+    "iac-security-review": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/code-security-skills/skills/iac-security-review/SKILL.md",
+      "computedHash": "acc11b881a69c81ad8c08eb7e67cf998ecda57bf6077a97591744328f191e6fb"
+    },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "computedHash": "7d02317432c125f492beb6db9ebf0ca8782df9abb45c771d5aa57acb1e94f39e"
+    },
+    "llm-risk-assess": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/ai-security-skills/skills/llm-risk-assess/SKILL.md",
+      "computedHash": "c1380a619302e71bf5d6e33a88706fa90b1030e2957eaee31d8840aa07c3f111"
+    },
+    "mcp-server-review": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/ai-security-skills/skills/mcp-server-review/SKILL.md",
+      "computedHash": "6b54fe771d2ab6b8f603d8da9f5d7f61c38911e6f147d3a158d84fdcd663bfa3"
+    },
+    "mobile-code-review": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/code-security-skills/skills/mobile-code-review/SKILL.md",
+      "computedHash": "af4870bf9ca85c657bf7b45a6bbeaa9e3515a54af5f05054928714f147a38968"
+    },
+    "multi-agentic-threat-model": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/multi-agentic-threat-model/SKILL.md",
+      "computedHash": "f93b4aec28e678ccd7e7633c9e81bb4d20b82d2fca480260fff39cf205a58716"
+    },
+    "prd-securability-enhancement": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/code-security-skills/skills/prd-securability-enhancement/SKILL.md",
+      "computedHash": "f2b3acf0777f3a91c1e6b7e57087839fbf8942e54879fcbba1b4565f78ce367f"
+    },
+    "prompt-injection-test": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/ai-security-skills/skills/prompt-injection-test/SKILL.md",
+      "computedHash": "88ca5b6c1882bd42c768558aabef7aefe3779c182f8e1d01b2f18d00082029a5"
+    },
+    "sca-audit": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/code-security-skills/skills/sca-audit/SKILL.md",
+      "computedHash": "2653082ff85d1ff48679561dfdd548638f5b90836ee052f98f66ba4cdb26a6aa"
+    },
+    "secrets-scan": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/code-security-skills/skills/secrets-scan/SKILL.md",
+      "computedHash": "a23315e493dbc8dcf31deef2effc670661a1ed58de4afd10db66269c4d6df64a"
+    },
+    "securability-engineering": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/code-security-skills/skills/securability-engineering/SKILL.md",
+      "computedHash": "239cfcfdb575d592888ae18685ecb4aa1262225bd8b1b3e77421f3ba4f96bfbc"
+    },
+    "securability-engineering-review": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/code-security-skills/skills/securability-engineering-review/SKILL.md",
+      "computedHash": "09d97983348257b9fa05ceab34013b4477db5a2549aa5802a6d415f58bbbc21a"
+    },
+    "secure-coding": {
+      "source": "securityreviewai/secure-coding-skill",
+      "sourceType": "github",
+      "skillPath": "skills/secure-coding/SKILL.md",
+      "computedHash": "455df13e5f91e79117169cee529574da5b7a36675b85470eab5f44e5f5d93460"
+    },
+    "security-audit": {
+      "source": "cloudflare/security-audit-skill",
+      "sourceType": "github",
+      "skillPath": "skills/security-audit/SKILL.md",
+      "computedHash": "e6b2e317de75da97e9de18d842982994803f3a67a4a6d8154a82323dc3de8528"
+    },
+    "security-guidance": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/code-security-skills/skills/security-guidance/SKILL.md",
+      "computedHash": "40ae24f8f851fee60298d840a578e0e0e2014fb3648d3010ad8abc8ecca54ec2"
+    },
+    "swiss-design": {
+      "source": "zeke/swiss-design-skill",
+      "sourceType": "github",
+      "skillPath": "swiss-design/SKILL.md",
+      "computedHash": "f0387f7156355487985a81ccf7cd0abbc8db37ce2db3751aa5607f528841d75b"
+    },
+    "web-security-review": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "plugins/code-security-skills/skills/web-security-review/SKILL.md",
+      "computedHash": "26e11a326ea825f8389ee554c8ce049f908e03ab3a71fae8fb949b5a849b977c"
+    },
+    "your-skill-name": {
+      "source": "OWASP/secure-agent-playbook",
+      "sourceType": "github",
+      "skillPath": "template/SKILL.md",
+      "computedHash": "a7e2cbde1d7d315009fb72d8b17e1a475c8140f465e14091a460186ee7032184"
+    }
+  }
+}

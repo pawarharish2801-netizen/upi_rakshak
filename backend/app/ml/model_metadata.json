@@ -1,0 +1,381 @@
+{
+  "model_name": "HistGradientBoosting",
+  "timestamp": "2026-11-10 13:59:28",
+  "optimal_threshold": 0.8103,
+  "feature_names_in": [
+    "amount_inr",
+    "hour_of_day",
+    "day_of_week",
+    "is_weekend",
+    "is_night_txn",
+    "sender_account_age_days",
+    "sender_avg_amount_30d",
+    "amount_to_avg_ratio",
+    "sender_txn_count_24h",
+    "sender_txn_count_7d",
+    "recipient_account_age_days",
+    "recipient_reputation_score",
+    "recipient_prior_complaints",
+    "recipient_unique_senders_24h",
+    "prior_txns_with_recipient",
+    "is_first_time_recipient",
+    "is_qr_payment",
+    "is_collect_request",
+    "qr_merchant_mismatch",
+    "collect_request_unsolicited",
+    "urgency_indicator",
+    "refund_or_reward_claim",
+    "impersonation_indicator",
+    "pin_requested_to_receive",
+    "suspicious_link_indicator",
+    "screen_sharing_request",
+    "caller_claims_authority",
+    "unsolicited_contact",
+    "secrecy_requested",
+    "emotional_pressure",
+    "call_in_progress",
+    "social_engineering_risk_score",
+    "sender_age_group",
+    "sender_city_tier",
+    "recipient_account_type",
+    "payment_purpose",
+    "payment_channel",
+    "recipient_verification_status"
+  ],
+  "feature_names_out": [
+    "amount_inr",
+    "hour_of_day",
+    "day_of_week",
+    "is_weekend",
+    "is_night_txn",
+    "sender_account_age_days",
+    "sender_avg_amount_30d",
+    "amount_to_avg_ratio",
+    "sender_txn_count_24h",
+    "sender_txn_count_7d",
+    "recipient_account_age_days",
+    "recipient_reputation_score",
+    "recipient_prior_complaints",
+    "recipient_unique_senders_24h",
+    "prior_txns_with_recipient",
+    "is_first_time_recipient",
+    "is_qr_payment",
+    "is_collect_request",
+    "qr_merchant_mismatch",
+    "collect_request_unsolicited",
+    "urgency_indicator",
+    "refund_or_reward_claim",
+    "impersonation_indicator",
+    "pin_requested_to_receive",
+    "suspicious_link_indicator",
+    "screen_sharing_request",
+    "caller_claims_authority",
+    "unsolicited_contact",
+    "secrecy_requested",
+    "emotional_pressure",
+    "call_in_progress",
+    "social_engineering_risk_score",
+    "sender_age_group_18-25",
+    "sender_age_group_26-35",
+    "sender_age_group_36-50",
+    "sender_age_group_51-60",
+    "sender_age_group_60+",
+    "sender_city_tier_Metro",
+    "sender_city_tier_Rural",
+    "sender_city_tier_Tier-2",
+    "sender_city_tier_Tier-3",
+    "recipient_account_type_Individual",
+    "recipient_account_type_Merchant",
+    "payment_purpose_bill_payment",
+    "payment_purpose_education_fees",
+    "payment_purpose_family_transfer",
+    "payment_purpose_fine_or_penalty",
+    "payment_purpose_food_delivery",
+    "payment_purpose_grocery",
+    "payment_purpose_investment",
+    "payment_purpose_kyc_update",
+    "payment_purpose_marketplace_sale",
+    "payment_purpose_merchant_payment",
+    "payment_purpose_other",
+    "payment_purpose_p2p_friends",
+    "payment_purpose_prize_claim",
+    "payment_purpose_refund_claim",
+    "payment_purpose_registration_fee",
+    "payment_purpose_rent",
+    "payment_purpose_service_fee",
+    "payment_purpose_shopping",
+    "payment_channel_Collect_Request",
+    "payment_channel_Contact_Pick",
+    "payment_channel_Merchant_Intent",
+    "payment_channel_Payment_Link",
+    "payment_channel_QR_Scan",
+    "payment_channel_UPI_ID_Manual",
+    "recipient_verification_status_Bank_Name_Verified",
+    "recipient_verification_status_Name_Mismatch",
+    "recipient_verification_status_Saved_Contact",
+    "recipient_verification_status_Unverified",
+    "recipient_verification_status_Verified_Merchant"
+  ],
+  "numeric_features": [
+    "amount_inr",
+    "hour_of_day",
+    "day_of_week",
+    "is_weekend",
+    "is_night_txn",
+    "sender_account_age_days",
+    "sender_avg_amount_30d",
+    "amount_to_avg_ratio",
+    "sender_txn_count_24h",
+    "sender_txn_count_7d",
+    "recipient_account_age_days",
+    "recipient_reputation_score",
+    "recipient_prior_complaints",
+    "recipient_unique_senders_24h",
+    "prior_txns_with_recipient",
+    "is_first_time_recipient",
+    "is_qr_payment",
+    "is_collect_request",
+    "qr_merchant_mismatch",
+    "collect_request_unsolicited",
+    "urgency_indicator",
+    "refund_or_reward_claim",
+    "impersonation_indicator",
+    "pin_requested_to_receive",
+    "suspicious_link_indicator",
+    "screen_sharing_request",
+    "caller_claims_authority",
+    "unsolicited_contact",
+    "secrecy_requested",
+    "emotional_pressure",
+    "call_in_progress",
+    "social_engineering_risk_score"
+  ],
+  "categorical_features": [
+    "sender_age_group",
+    "sender_city_tier",
+    "recipient_account_type",
+    "payment_purpose",
+    "payment_channel",
+    "recipient_verification_status"
+  ],
+  "feature_defaults": {
+    "amount_inr": 1136.375,
+    "hour_of_day": 15.0,
+    "day_of_week": 3.0,
+    "is_weekend": 0.0,
+    "is_night_txn": 0.0,
+    "sender_account_age_days": 991.0,
+    "sender_avg_amount_30d": 838.915,
+    "amount_to_avg_ratio": 1.426,
+    "sender_txn_count_24h": 1.0,
+    "sender_txn_count_7d": 9.0,
+    "recipient_account_age_days": 1039.0,
+    "recipient_reputation_score": 78.7,
+    "recipient_prior_complaints": 0.0,
+    "recipient_unique_senders_24h": 17.0,
+    "prior_txns_with_recipient": 3.0,
+    "is_first_time_recipient": 0.0,
+    "is_qr_payment": 0.0,
+    "is_collect_request": 0.0,
+    "qr_merchant_mismatch": 0.0,
+    "collect_request_unsolicited": 0.0,
+    "urgency_indicator": 0.0,
+    "refund_or_reward_claim": 0.0,
+    "impersonation_indicator": 0.0,
+    "pin_requested_to_receive": 0.0,
+    "suspicious_link_indicator": 0.0,
+    "screen_sharing_request": 0.0,
+    "caller_claims_authority": 0.0,
+    "unsolicited_contact": 0.0,
+    "secrecy_requested": 0.0,
+    "emotional_pressure": 0.0,
+    "call_in_progress": 0.0,
+    "social_engineering_risk_score": 0.042,
+    "sender_age_group": "26-35",
+    "sender_city_tier": "Tier-2",
+    "recipient_account_type": "Merchant",
+    "payment_purpose": "grocery",
+    "payment_channel": "QR_Scan",
+    "recipient_verification_status": "Verified_Merchant"
+  },
+  "validation_results": [
+    {
+      "model": "Logistic Regression",
+      "fit_time_sec": 0.42,
+      "val_roc_auc": 0.9623,
+      "val_pr_auc": 0.9008,
+      "optimal_threshold": 0.8136,
+      "val_precision": 0.879,
+      "val_recall": 0.7911,
+      "val_f1": 0.8327,
+      "val_fnr": 0.2089,
+      "val_cm": {
+        "TN": 12505,
+        "FP": 245,
+        "FN": 470,
+        "TP": 1780
+      }
+    },
+    {
+      "model": "Random Forest",
+      "fit_time_sec": 3.27,
+      "val_roc_auc": 0.9642,
+      "val_pr_auc": 0.9111,
+      "optimal_threshold": 0.5632,
+      "val_precision": 0.8885,
+      "val_recall": 0.804,
+      "val_f1": 0.8441,
+      "val_fnr": 0.196,
+      "val_cm": {
+        "TN": 12523,
+        "FP": 227,
+        "FN": 441,
+        "TP": 1809
+      }
+    },
+    {
+      "model": "HistGradientBoosting",
+      "fit_time_sec": 3.4,
+      "val_roc_auc": 0.9691,
+      "val_pr_auc": 0.9245,
+      "optimal_threshold": 0.8103,
+      "val_precision": 0.925,
+      "val_recall": 0.8053,
+      "val_f1": 0.861,
+      "val_fnr": 0.1947,
+      "val_cm": {
+        "TN": 12603,
+        "FP": 147,
+        "FN": 438,
+        "TP": 1812
+      }
+    },
+    {
+      "model": "XGBoost",
+      "fit_time_sec": 0.87,
+      "val_roc_auc": 0.9692,
+      "val_pr_auc": 0.9246,
+      "optimal_threshold": 0.7377,
+      "val_precision": 0.8984,
+      "val_recall": 0.8218,
+      "val_f1": 0.8584,
+      "val_fnr": 0.1782,
+      "val_cm": {
+        "TN": 12541,
+        "FP": 209,
+        "FN": 401,
+        "TP": 1849
+      }
+    }
+  ],
+  "test_evaluation": {
+    "roc_auc": 0.9712,
+    "pr_auc": 0.9312,
+    "precision": 0.9278,
+    "recall": 0.8116,
+    "f1": 0.8658,
+    "fnr": 0.1884,
+    "confusion_matrix": {
+      "TN": 12608,
+      "FP": 142,
+      "FN": 424,
+      "TP": 1826
+    }
+  },
+  "temporal_test_evaluation": {
+    "roc_auc": 0.9799,
+    "pr_auc": 0.9442,
+    "precision": 0.9335,
+    "recall": 0.8265,
+    "f1": 0.8768,
+    "fnr": 0.1735,
+    "confusion_matrix": {
+      "TN": 12644,
+      "FP": 131,
+      "FN": 386,
+      "TP": 1839
+    }
+  },
+  "top_global_features": [
+    {
+      "feature": "sender_txn_count_7d",
+      "mean_abs_shap": 0.52273
+    },
+    {
+      "feature": "recipient_account_age_days",
+      "mean_abs_shap": 0.43846
+    },
+    {
+      "feature": "recipient_reputation_score",
+      "mean_abs_shap": 0.42034
+    },
+    {
+      "feature": "social_engineering_risk_score",
+      "mean_abs_shap": 0.40145
+    },
+    {
+      "feature": "recipient_prior_complaints",
+      "mean_abs_shap": 0.39975
+    },
+    {
+      "feature": "recipient_unique_senders_24h",
+      "mean_abs_shap": 0.35675
+    },
+    {
+      "feature": "prior_txns_with_recipient",
+      "mean_abs_shap": 0.34119
+    },
+    {
+      "feature": "amount_inr",
+      "mean_abs_shap": 0.16089
+    },
+    {
+      "feature": "recipient_account_type_Individual",
+      "mean_abs_shap": 0.13076
+    },
+    {
+      "feature": "sender_txn_count_24h",
+      "mean_abs_shap": 0.12494
+    },
+    {
+      "feature": "unsolicited_contact",
+      "mean_abs_shap": 0.12008
+    },
+    {
+      "feature": "suspicious_link_indicator",
+      "mean_abs_shap": 0.11454
+    },
+    {
+      "feature": "impersonation_indicator",
+      "mean_abs_shap": 0.10448
+    },
+    {
+      "feature": "refund_or_reward_claim",
+      "mean_abs_shap": 0.0979
+    },
+    {
+      "feature": "payment_channel_Merchant_Intent",
+      "mean_abs_shap": 0.0878
+    },
+    {
+      "feature": "recipient_verification_status_Unverified",
+      "mean_abs_shap": 0.08433
+    },
+    {
+      "feature": "pin_requested_to_receive",
+      "mean_abs_shap": 0.06427
+    },
+    {
+      "feature": "recipient_verification_status_Name_Mismatch",
+      "mean_abs_shap": 0.06181
+    },
+    {
+      "feature": "payment_purpose_shopping",
+      "mean_abs_shap": 0.05655
+    },
+    {
+      "feature": "sender_age_group_60+",
+      "mean_abs_shap": 0.05332
+    }
+  ]
+}

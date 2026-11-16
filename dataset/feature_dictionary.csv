@@ -1,0 +1,46 @@
+column,dtype,role,description,values_or_range
+transaction_id,string,identifier,Unique synthetic transaction ID (chronological order).,UPIRK0000001 ...
+transaction_timestamp,datetime,identifier,Synthetic transaction date and time (2025-01-01 to 2025-12-31).,YYYY-MM-DD HH:MM:SS
+sender_id,string,identifier,Fully synthetic sender VPA. Not a real UPI ID. Exclude from model features.,snd_XXXXXXXX@synupi
+recipient_id,string,identifier,Fully synthetic recipient VPA (opaque; prefix does not reveal type). Exclude from model features: mule IDs repeat.,rcp_XXXXXXXX@synupi
+amount_inr,float,numeric,"Transaction amount in INR; capped at Rs 1,00,000 (typical UPI per-transaction limit).",1 - 100000
+hour_of_day,int,numeric,Hour of transaction (0-23).,0-23
+day_of_week,int,numeric,"Day of week, Monday = 0.",0-6
+is_weekend,int,binary,1 if Saturday/Sunday.,0/1
+is_night_txn,int,binary,1 if transaction between 23:00 and 05:59.,0/1
+sender_age_group,category,categorical,Sender age band (scams target different groups with different probability).,"18-25, 26-35, 36-50, 51-60, 60+"
+sender_city_tier,category,categorical,Sender city tier.,"Metro, Tier-2, Tier-3, Rural"
+sender_account_age_days,int,numeric,Age of the sender's UPI registration in days.,20 - 3800
+sender_avg_amount_30d,float,numeric,Sender's average transaction amount over the previous 30 days (INR).,50 - ~30000
+amount_to_avg_ratio,float,numeric,amount_inr / sender_avg_amount_30d; spikes indicate out-of-pattern payments.,>0
+sender_txn_count_24h,int,numeric,Sender's transactions in the 24 h before this one (simulated).,>=0
+sender_txn_count_7d,int,numeric,Sender's transactions in the 7 days before this one (>= 24 h count).,>=0
+recipient_account_type,category,categorical,Recipient account type as registered (some fake 'merchants' exist).,"Merchant, Individual"
+recipient_account_age_days,int,numeric,Age of recipient account in days; very new accounts are riskier but not always fraudulent.,1 - 6000
+recipient_reputation_score,float,numeric,"Recipient reputation (0 = worst, 100 = best) from simulated network/complaint history.",0 - 100
+recipient_prior_complaints,int,numeric,Number of prior complaints against the recipient (many mule accounts have 0).,>=0
+recipient_unique_senders_24h,int,numeric,Distinct senders paying this recipient in last 24 h incl. this one (fan-in).,>=1
+prior_txns_with_recipient,int,numeric,Earlier payments from this sender to this recipient.,>=0
+is_first_time_recipient,int,binary,1 if prior_txns_with_recipient == 0.,0/1
+payment_purpose,category,categorical,Declared/inferred payment purpose. Includes legit and scam-style purposes; legit rows can carry scam-style purposes.,"grocery, rent, refund_claim, prize_claim, ..."
+payment_channel,category,categorical,How the payment was initiated.,"QR_Scan, UPI_ID_Manual, Collect_Request, Contact_Pick, Payment_Link, Merchant_Intent"
+is_qr_payment,int,binary,QR code scanned to pay (payment_channel == QR_Scan).,0/1
+is_collect_request,int,binary,Payment initiated by approving a collect request.,0/1
+qr_merchant_mismatch,int,binary,QR payee name/type does not match the claimed merchant or purpose (only possible when is_qr_payment = 1).,0/1
+collect_request_unsolicited,int,binary,Collect request the sender did not expect (only possible when is_collect_request = 1).,0/1
+urgency_indicator,int,binary,Sender was pressured to pay immediately or within a deadline (legit bills can be urgent too).,0/1
+refund_or_reward_claim,int,binary,"Payment framed as a refund, cashback, prize or reward claim.",0/1
+impersonation_indicator,int,binary,"Recipient/contact claims to be a bank, company, official, relative or boss (system flag; has false positives).",0/1
+pin_requested_to_receive,int,binary,Sender was asked to enter UPI PIN to 'receive' money (PIN is only ever needed to send).,0/1
+suspicious_link_indicator,int,binary,"Payment arrived through a link flagged suspicious (shortened, unknown domain, phishing-like).",0/1
+screen_sharing_request,int,binary,Sender was asked to install/use a screen-sharing or remote-access app.,0/1
+recipient_verification_status,category,categorical,Recipient name verification result.,"Verified_Merchant, Saved_Contact, Bank_Name_Verified, Name_Mismatch, Unverified"
+caller_claims_authority,int,binary,"Social engineering: contact claims to be police, CBI, RBI, TRAI, bank or customs.",0/1
+unsolicited_contact,int,binary,Social engineering: interaction initiated by the other party (call/SMS/message).,0/1
+secrecy_requested,int,binary,Social engineering: sender told not to tell family/bank/anyone.,0/1
+emotional_pressure,int,binary,"Social engineering: fear, threat, greed or emotional manipulation present.",0/1
+call_in_progress,int,binary,Sender was on a phone/video call while making the payment.,0/1
+social_engineering_risk_score,float,numeric,"Composite 0-1 social-engineering score from the five indicators above + urgency + impersonation, with noise. Derived from features only.",0 - 1
+is_fraud,int,target,TARGET (binary): 1 = fraudulent transaction.,0/1
+fraud_category,category,target,"TARGET (multiclass): scam type, or 'Legitimate'. Never use as a feature for is_fraud.",10 scams + Legitimate
+risk_level,category,target,TARGET (ordinal): analyst-style triage level. Derived from a rule score + outcome; never use as a feature for is_fraud.,"Low, Medium, High"

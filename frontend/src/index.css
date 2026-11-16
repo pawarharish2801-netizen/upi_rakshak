@@ -1,0 +1,349 @@
+@import "tailwindcss";
+
+/* ============================================
+   UPI Rakshak — Accessible Animation & Spatial Tokens
+   (accessible-animation + antigravity-design-expert)
+   ============================================ */
+
+@theme {
+  /* Brand Palette */
+  --color-brand-deep: #0f2b5b;
+  --color-brand-navy: #0a1628;
+  --color-brand-midnight: #060d18;
+  --color-brand-accent: #e8613a;
+  --color-brand-accent-soft: #f0845f;
+  --color-brand-accent-glow: rgba(232, 97, 58, 0.15);
+
+  /* Spatial Surfaces */
+  --color-surface-primary: #ffffff;
+  --color-surface-secondary: #f8fafc;
+  --color-surface-tertiary: #f1f5f9;
+  --color-surface-elevated: #ffffff;
+  --color-surface-dark: #0a1628;
+  --color-surface-dark-elevated: #0f213d;
+
+  /* Content / Text */
+  --color-content-primary: #18181b;
+  --color-content-secondary: #52525b;
+  --color-content-tertiary: #94a3b8;
+  --color-content-inverse: #f8fafc;
+
+  /* Semantic Status */
+  --color-success: #059669;
+  --color-success-soft: #d1fae5;
+  --color-warning: #d97706;
+  --color-warning-soft: #fef3c7;
+  --color-danger: #e11d48;
+  --color-danger-soft: #ffe4e6;
+  --color-critical: #881337;
+
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
+  /* Font Families — Modernist Grotesque & Rational Data */
+  --font-sans: 'IBM Plex Sans', 'Geist', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Diffused Antigravity Shadows */
+  --shadow-subtle: 0 1px 3px 0 rgba(15, 43, 91, 0.04), 0 1px 2px -1px rgba(15, 43, 91, 0.02);
+  --shadow-floating: 0 20px 40px -15px rgba(15, 43, 91, 0.08), 0 0 1px 1px rgba(15, 43, 91, 0.04);
+  --shadow-glass: 0 20px 50px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  --shadow-spatial-dark: 0 30px 60px -12px rgba(0, 0, 0, 0.5), 0 18px 36px -18px rgba(0, 0, 0, 0.4);
+}
+
+/* Base resets & typography */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface-secondary);
+  color: var(--color-content-primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Number styling in mono */
+.font-data {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   Antigravity Spatial & Glassmorphism Utilities
+   ============================================ */
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Dark theme glass panel */
+.glass-panel-dark {
+  background: rgba(15, 33, 61, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Light theme weightless card */
+.card-weightless {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 12px 32px -10px rgba(15, 43, 91, 0.06), 0 4px 8px -2px rgba(15, 43, 91, 0.03);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.card-weightless:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -12px rgba(15, 43, 91, 0.12), 0 6px 12px -2px rgba(15, 43, 91, 0.04);
+  border-color: rgba(15, 43, 91, 0.2);
+}
+
+/* Frosted glass headers */
+.glass-header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-header-dark {
+  background: rgba(10, 22, 40, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Subtle background grid pattern */
+.bg-spatial-grid {
+  background-image: radial-gradient(rgba(15, 43, 91, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-spatial-grid-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Skeleton shimmer utility */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f1f5f9 25%,
+    #e2e8f0 50%,
+    #f1f5f9 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite linear;
+}
+
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+
+/* Floating animation for weightless effect */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.5deg);
+  }
+}
+
+.animate-float {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+/* Radar & Telemetry Scanning Keyframes */
+@keyframes radar-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar {
+  animation: radar-sweep 4s linear infinite;
+}
+
+@keyframes beam-scan {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-beam {
+  animation: beam-scan 2.8s ease-in-out infinite;
+}
+
+/* Subtle glow accent aura */
+.glow-accent {
+  box-shadow: 0 0 35px -5px rgba(232, 97, 58, 0.35);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 35px -5px rgba(5, 150, 105, 0.35);
+}
+
+.glow-rose {
+  box-shadow: 0 0 35px -5px rgba(225, 29, 72, 0.35);
+}
+
+
+/* =========================================================================
+   Tiered Reduced Motion Implementation (WCAG 2.3.3 / C39 & accessible-animation)
+   Tier 1: Remove vestibular triggers (parallax, 3D tilt, large displacement, floats)
+   Tier 2: Soften to short cross-fades (<= 150-200ms)
+   Tier 3: Preserve essential indicators (spinners, focus rings, opacity changes)
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Global safety net: 0.01ms duration so transitionend/animationend still fire reliably */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Tier 1: Neutralize large-scale transforms & perpetual floating loops */
+  .animate-float,
+  .animate-bounce,
+  .animate-pulse,
+  .animate-radar,
+  .animate-beam {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .perspective-1000,
+  .perspective-2000 {
+    perspective: none !important;
+  }
+
+  .card-weightless:hover {
+    transform: none !important;
+  }
+
+  /* Tier 2: Replace motion displacement with soft, gentle opacity cross-fade (150ms) */
+  .transition-all,
+  .transition-colors,
+  .transition-opacity {
+    transition: opacity 150ms ease, background-color 150ms ease, border-color 150ms ease !important;
+  }
+
+  /* Tier 3: Essential progress & loading indicators MUST survive (WCAG 2.3.3 exemption) */
+  .animate-spin {
+    animation: spin 1s linear infinite !important;
+    animation-duration: 1s !important;
+    animation-iteration-count: infinite !important;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ============================================
+   Print Styles for Audit & Police Reports
+   ============================================ */
+@media print {
+  nav,
+  footer,
+  button,
+  .no-print,
+  a[href^="/assess"],
+  a[href^="/scan"] {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  .border,
+  .border-2 {
+    border-color: #d1d5db !important;
+  }
+
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-2xl {
+    box-shadow: none !important;
+  }
+
+  .glass-panel-dark,
+  .bg-spatial-grid-dark {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
